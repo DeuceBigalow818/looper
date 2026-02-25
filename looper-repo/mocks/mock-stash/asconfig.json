@@ -1,0 +1,41 @@
+{
+    "targets": {
+        "debug": {
+            "outFile": "build/MockStash.wasm",
+            "textFile": "build/MockStash.wat",
+            "sourceMap": true,
+            "optimizeLevel": 0,
+            "shrinkLevel": 0,
+            "converge": false,
+            "noAssert": false
+        },
+        "release": {
+            "outFile": "build/MockStash.wasm",
+            "textFile": "build/MockStash.wat",
+            "sourceMap": false,
+            "optimizeLevel": 3,
+            "shrinkLevel": 2,
+            "converge": true,
+            "noAssert": true
+        }
+    },
+    "options": {
+        "transform": "@btc-vision/opnet-transform",
+        "enable": [
+            "sign-extension",
+            "mutable-globals",
+            "nontrapping-f2i",
+            "bulk-memory",
+            "simd",
+            "reference-types",
+            "multi-value"
+        ],
+        "runtime": "stub",
+        "memoryBase": 0,
+        "initialMemory": 1,
+        "exportStart": "start",
+        "use": [
+            "abort=src/index/abort"
+        ]
+    }
+}

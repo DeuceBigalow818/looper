@@ -1,0 +1,23 @@
+{
+    "name": "mock-moto",
+    "version": "1.0.0",
+    "description": "Mintable OP20 mock token for LoopExecutor regtest testing",
+    "type": "module",
+    "scripts": {
+        "build": "asc src/index.ts --config asconfig.json --target debug",
+        "build:release": "asc src/index.ts --config asconfig.json --target release",
+        "clean": "rm -rf build/*"
+    },
+    "dependencies": {
+        "@btc-vision/as-bignum": "0.1.2",
+        "@btc-vision/btc-runtime": "rc"
+    },
+    "devDependencies": {
+        "@btc-vision/assemblyscript": "^0.29.2",
+        "@btc-vision/opnet-transform": "1.1.0",
+        "@assemblyscript/loader": "latest"
+    },
+    "overrides": {
+        "@noble/hashes": "2.0.1"
+    }
+}
